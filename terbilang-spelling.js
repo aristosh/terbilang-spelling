@@ -1,7 +1,20 @@
 function terbilang(num) {
-  var rev = num.toString().split('').reverse();
-  var result = [];
+  var rev = num.toString().replace(/\.[0-9]+/, '').split('').reverse();
+
+  if(num.toString().search(/\./) >= 0)
+    var revDecimal = num.toString().replace(/[0-9]+\./, '').split('').reverse();
+
+  var result = '';
   var thousands = '';
+
+  // handle decimal
+  if(revDecimal) {
+    for(var i = 0; i < revDecimal.length; i++)
+      result = toWords(revDecimal, i, true) + result;
+    result = 'koma ' + result;
+  }
+
+  // handle non-decimal
   for(var i = 0; i < rev.length; i++) {
     if(i == 3) {
       thousands = 'ribu ';
@@ -36,13 +49,18 @@ function terbilang(num) {
 
   return result;
 
-  function toWords(arr, index) {
+  function toWords(arr, index, decimal) {
     var number = arr[index];
     switch(number) {
+      case '.':
+        if(decimal)
+          return 'koma ';
       case '0':
+        if(decimal)
+          return 'nol ';
         return '';
       case '1':
-        if(index == 1 || index == 2 || arr[index + 1]  == '1' || (index % 3) == 1 || (index % 3) == 2)
+        if(!decimal && (index == 1 || index == 2 || arr[index + 1]  == '1' || (index % 3) == 1 || (index % 3) == 2))
           return 'se';
         return 'satu ';
       case '2':
