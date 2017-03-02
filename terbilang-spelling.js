@@ -25,7 +25,19 @@ function terbilang(num) {
     } else if(i == 12) {
       thousands = 'triliun ';
     } else if(i == 15) {
-      thousands = 'billiun ';
+      thousands = 'kuadriliun ';
+    } else if(i == 18) {
+      thousands = 'kuantiliun ';
+    } else if(i == 21) {
+      thousands = 'sekstiliun ';
+    } else if(i == 24) {
+      thousands = 'septiliun ';
+    } else if(i == 27) {
+      thousands = 'oktiliun ';
+    } else if(i == 30) {
+      thousands = 'noniliun ';
+    } else if(i == 33) {
+      thousands = 'desiliun ';
     }
 
     if(rev[i] != '0') {
