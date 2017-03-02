@@ -32,5 +32,5 @@ Supports floating point
 
 ## Limitation
 ```
-Only handles up to 'desiliun'
+Handles up to 'desiliun'
 ```
