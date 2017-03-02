@@ -1,7 +1,7 @@
 {
   "name": "terbilang-spelling",
   "author": "Aristo S. Hadisoeganda",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Convert numbers to words in Bahasa Indonesia",
   "keywords": ["terbilang", "spell", "spelling", "bahasa", "indonesia"],
   "homepage": "https://github.com/aristosh/terbilang",
